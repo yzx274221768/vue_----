@@ -345,5 +345,41 @@
 		}
 	}
 
-	var SSR_ATTR = 'data-server-rendered'
+	var SSR_ATTR = 'data-server-rendered';
+
+	var ASSET_TYPES = ['component', 'directive', 'filter'];
+
+	var LIFECYCLE_HOOKS = ['beforeCreate', 'created', 'beforeMount', 'mounted', 'beforeUpdate', 'updated', 'beforeDestory'
+		, 'destoryed', 'actived', 'deactivated', 'errorCaptured', 'serverPrefetch'];
+
+	var config = ({
+		//选项合并策略（在core/util/options中使用）
+		optionMergeStrategies: Object.create(null),
+
+		//是否抑制警告
+		silent: false,
+
+		// 启动时显示生产模式提示消息？
+		productionTip: 'development' !== 'production',
+
+		//是否启用devtools
+		devtools: "development" !== 'production',
+
+		//Whether to record perf是否记录性能
+		performance: false,
+
+		//观察程序错误
+		errorHandler: false,
+
+		// 观察警告
+		warnHandler: false,
+
+		//忽略某些自定义元素
+		ignoredElement: [],
+
+		//  Custom user key aliases for v-on   v-on的自定义用户密钥别名
+		keyCodes: Object.create(null),
+
+
+	})
 })
