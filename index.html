@@ -1,0 +1,51 @@
+<!DOCTYPE>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>vue2 源码</title>
+	<meta name="viewport"
+		content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+</head>
+
+<body>
+
+	<h1>123</h1>
+
+	<script src="vue/vue2.js">
+
+
+	</script>
+	<script>
+
+		const json = { a: undefined, b: Symbol.for(), c: [() => 3], x: 5, y: new String("hello"), z: new Number(7), bool: new Boolean(true), time: () => new Date().toJSON() };
+		const jb = JSON.stringify(json, ['x', 'y'], 4)
+		console.log(jb);
+
+
+		function polyfillBind(fn, ctx) {
+			function boundFn(a) {
+				var l = arguments.length;
+				return l ? l > 1 ? fn.apply(ctx, arguments) : fn.call(ctx, a) :
+					fn.call(a);
+			}
+			boundFn._length = fn.length;
+			return boundFn;
+		}
+
+
+		function a() {
+			function b() {
+				var l = arguments.length;
+				console.log(l)
+			}
+			b();
+			console.log(arguments.length);
+		}
+		a(1, 2, 3)
+
+	</script>
+</body>
+
+</html>
